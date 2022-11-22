@@ -8,8 +8,7 @@ const TaskForm = () => {
 
   const [values, setValues] = useState({
     title: '',
-    description: '',
-    });
+    description: '', });
 
 
 
