@@ -5,35 +5,39 @@ import { TaskListContext } from "../context/TaskListContext";
 const TaskForm = () => {
   const { addTask, clearList, editItem, editTask } = useContext(TaskListContext);
 
-  const [title, setTitle] = useState("");
 
-  const handleSubmit = (e) => {
+  const [values, setValues] = useState({
+    title: '',
+    description: '',
+    });
+
+
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    if (editItem ===null) {
-      addTask(title);
-      setTitle('')
-      console.log(title);
-    } else{
-      editTask(title, editItem.id)
+    if (values.title ==='' || values.description === "") return
+    else{
+       await addTask(values)
     }
   };
 
   const handleChange = (e) => {
-    setTitle(e.target.value);
-  };
+   const { name, value } = e.target;
+   setValues({ ...values, [name]: value});};
 
-  useEffect(()=>{
-   if(editItem !==null){
-    setTitle(editItem.title)
-   }else{
-    setTitle('')
-   }
-  },[editItem])
+  // useEffect(()=>{
+  //  if(editItem !==null){
+  //   setTitle(editItem.title)
+  //  }else{
+  //   setTitle('')
+  //  }
+  // },[editItem])
   return (
     <form className="form" onSubmit={handleSubmit}>
       <input
         type="text"
-        value={title}
+        name="title"
+        value={values.title}
         className="task-input"
         placeholder="Enter Task"
         required
@@ -41,12 +45,14 @@ const TaskForm = () => {
       />
       <input
         type="text"
-        value={title}
+        name="description"
+        value={values.description}
         className="task-input"
         placeholder="Enter Description"
         required
         onChange={handleChange}
       />
+    
       <div className="buttons">
         <button type="submit" className="btn add-task-btn">
          {editItem? 'Edit Item' : 'Add Items'}

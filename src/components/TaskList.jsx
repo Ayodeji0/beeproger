@@ -17,12 +17,14 @@ const TaskList = () => {
               "TodoList-description": description,
             } = task;
             return (
+              
               <Task
-                task={id}
+                id={id}
                 key={id}
                 image={image}
                 title={title}
                 description={description}
+
               />
             );
           })}
