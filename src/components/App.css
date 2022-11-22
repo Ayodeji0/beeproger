@@ -1,4 +1,4 @@
-.app{
+ .app{
   text-align: center;
 }
 
@@ -16,9 +16,94 @@
   color:gray
 }
 
+.funbtn{
+  display: flex;
+  justify-content: space-between;
+  height: 16px;
+ margin: 20px;
+}
+
+
+.mainG{
+  display: flex;
+  /* flex-direction: row; */
+}
+
+
+
+.todo-content{
+  display: flex;
+  flex-direction:row ;
+}
+
+.todo-container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* .home{
+  display: flex;
+} */
+
+
+/* .todo-image{
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  
+} */
+
+/* .todo-description{
+  color: gray;
+  margin-left: 10px;
+  font-size:14px ;
+  max-width: 60%;
+} */
+
+/* .todo-title{ */
+  /* margin-left: 1rem; */
+  /* color: #fff;
+  text-transform: capitalize;
+  font-size: 19px;
+  font-weight: 400;
+  
+} */
+
+/* .todo-mainImage{
+
+} */
+ 
+ .btn-delete  {
+  font-size: 16px;
+  color: black;
+  border: none;
+  margin-right: 1rem;
+} 
+
+.icon1{
+  margin-right: 20px;
+  padding: none;
+}
+
+.icon2{
+
+}
+
+
+.description{
+  max-width: 70%;
+  /* margin-left: 5px; */
+}
+.todo-title{
+  color:'white'
+}
+
+
 .header{
   color: white;
-  margin-top: '45px'
+  margin-bottom:20px;
+  margin-top:15px
 }
 
 .app-wrapper {
@@ -63,32 +148,45 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+} 
+
+.todoTitle{
+  color:#fff;
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 2.5rem;
+}
+.description{
+  color:gray;
+  font-size: 14px;
+  font-weight: 200;
 }
 
   
 
   /* width */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
-}
+} */
 
 /* Track */
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: #aaa;
-}
+/* ::-webkit-scrollbar-track {
+  border-radius: 10px; */
+  /* background-color: #aaa; */
+
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
   background: #444;
   border-radius: 10px;
-}
+} */
 .task-input {
   width: 350px;
   min-width: 250px;
   padding: 15px 10px 10px 20px;
   margin-right: 10px;
+  margin-top: 10px;
   font-family: "Josefin Sans", serif;
   font-family: 'Josefin Sans', serif;
   font-size: 15px;
@@ -104,6 +202,14 @@
 }
 .btn {
   margin: 10px;
+}
+
+.task-button{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* margin: 2rem; */
+  
 }
 
   .add-task-btn {
@@ -126,6 +232,7 @@
     max-height: 300px;
     overflow: hidden;
     overflow-y: auto;
+   
   }
   
   .list-item {
@@ -146,6 +253,7 @@
   background-color: transparent;
   border: none;
   outline: none;
+  /* margin-left: 2rem; */
 }
 
 
@@ -169,7 +277,4 @@
   text-align: center;
   font-size: 18px;
   margin-top: 20px;
-}
-
-
-
+} 

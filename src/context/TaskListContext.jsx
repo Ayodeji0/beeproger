@@ -1,10 +1,22 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect, useCallback } from "react";
 import { v4 } from "uuid";
+import { getAllTodo } from "../Api/Client";
+import { useAllTodo } from "../hook/useAllTodo";
 
 export const TaskListContext = createContext();
+// import reducer from "./reducer";
+
 
 const TaskListContextProvider = (props) => {
+  
   const [tasks, setTasks] = useState([]);
+  const fetchAllTodo= useCallback( async()=>{
+    const result = await getAllTodo()
+   setTasks(result.data?.data)
+    },[])
+    useEffect(()=>{
+    fetchAllTodo()
+    },[fetchAllTodo])
 
   const [editItem, setEditItem] = useState(null);
 

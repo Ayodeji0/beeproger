@@ -39,6 +39,14 @@ const TaskForm = () => {
         required
         onChange={handleChange}
       />
+      <input
+        type="text"
+        value={title}
+        className="task-input"
+        placeholder="Enter Description"
+        required
+        onChange={handleChange}
+      />
       <div className="buttons">
         <button type="submit" className="btn add-task-btn">
          {editItem? 'Edit Item' : 'Add Items'}
